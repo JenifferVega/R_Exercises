@@ -3,10 +3,8 @@
 
 x <- c(88, 5, 12, 13)
 
-# Elimina los elementos 5 y 13 del vector x
 x <- x[-which(x %in% c(5, 13))]
 
-# Imprime el vector resultante
 x
 
 /*-----------------------------------------------*/
@@ -45,13 +43,11 @@ z_copy
   
   #EXERCISE CLASSWORK  #1
   
-  #se definio el valor de los datos
+ 
   x <- c(1, 1, 0, 1, 0, 1)
 
-# Definir el valor de k 
 k <- 3
 
-# vector que almacena las predicciones
 prediction <- numeric(length(x))
 
 # 
@@ -91,7 +87,6 @@ for (i in k:length(x)) {
 correct_predictions <- sum(predictions[k:length(x)] == x[k:length(x)])
 accuracy <- correct_predictions / (length(x) - k + 1)
 
-# Imprime la precisión
 cat("La precisión es:", accuracy, "\n")
 
 /*--------------------------------------------------------*/
