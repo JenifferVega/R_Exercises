@@ -1,3 +1,12 @@
+import pandas as pd
+import numpy as np
+import scipy
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import rpy2.robjects as ro
+from rpy2.robjects import pandas2ri
+
 def is_prime(num):
     if num <= 1:
         return False
@@ -13,9 +22,7 @@ def find_primes(start, end):
             primes.append(num)
     return primes
 
-if __name__ == "SecondExercise":
-    start_num = 10  
-    end_num = 50
 
-    prime_numbers = find_primes(start_num, end_num)
-    print("Prime numbers between", start_num, "and", end_num, "are:", prime_numbers)
+pandas2ri.activate()
+prime_numbers = find_primes(10, 50)  # Cambia estos valores según tus necesidades
+ro.globalenv['prime_numbers'] = ro.Vector(prime_numbers)
