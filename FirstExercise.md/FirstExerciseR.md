@@ -1,0 +1,55 @@
+---
+title: "Simulador de Juego de Cartas"
+author: "Jeniffer Funez"
+date: "Fecha"
+output: html_document
+---
+
+# Introducción
+
+En este informe, se ha implementado 
+## Crear un archivo CSV con todas las cartas
+
+```{r}
+# Código que crea el archivo CSV con las cartas
+create_deck_csv <-  function(filename="poker_deck.csv") {
+  suits <- c("Hearts", "Diamonds", "Clubs", "Spades")
+  values <- c("2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace")
+  deck <- expand.grid(Value=values, Suit=suits)
+  write.csv(deck, filename, row.names=FALSE)
+}
+
+create_deck_csv()
+
+
+
+# Código para barajar el mazo
+shuffle_deck <- function(deck) {
+  shuffled_deck <- deck[sample(nrow(deck)), ]
+  return(shuffled_deck)
+}
+
+
+# codigo  para barajar el mazo
+shuffle_deck <- function(deck) {
+  shuffled_deck <- deck[sample(nrow(deck)), ]
+  return(shuffled_deck)
+}
+
+# Código  para jugar al Blackjack
+play_blackjack <- function() {
+  deck <- shuffle_deck(read_deck())
+  player_score <- 0
+  dealer_score <- 0
+  
+  
+  
+  # Al final, guardamos los  resultados en un archivo CSV
+  results <- data.frame(Ganadas = ganadas, Perdidas = perdidas)
+  write.csv(results, "results.csv", row.names = FALSE)
+}
+
+# Jugar al Blackjack
+play_blackjack()
+
+
