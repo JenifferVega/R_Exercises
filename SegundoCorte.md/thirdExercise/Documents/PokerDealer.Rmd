@@ -1,0 +1,14 @@
+---
+title: "Poker Dealer"
+output: pdf_document
+---
+
+# Introducción
+este proyecto barajea unas cartas y revela las primeras 5
+
+# Crear el Mazo de Cartas en R
+
+```{r}
+source("Rscripts/create_deck.R")
+
+
