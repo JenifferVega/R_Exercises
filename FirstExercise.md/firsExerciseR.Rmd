@@ -4,9 +4,10 @@ author: "Jeniffer Funez"
 date: "9/10/223"
 output: html_document
 ---
+  
+  
 
-
-## Crear un archivo CSV con todas las cartas
+## Creamos un archivo con todas las cartas
 
 ```{r}
 # Código que crea el archivo CSV con las cartas
@@ -19,29 +20,29 @@ create_deck_csv <-  function(filename="poker_deck.csv") {
 
 create_deck_csv()
 
-# codigo  para barajar el mazo
+# Código para barajar el mazo
 shuffle_deck <- function(deck) {
   shuffled_deck <- deck[sample(nrow(deck)), ]
   return(shuffled_deck)
 }
 
-# Código  para jugar al Blackjack
+# Código para jugar al Blackjack
 play_blackjack <- function() {
   deck <- shuffle_deck(read_deck())
   player_score <- 0
   dealer_score <- 0
+  ganadas <- 0  # Inicializar la variable ganadas
+  perdidas <- 0  # Inicializar la variable perdidas
   
+  # Resto del código del juego aquí
   
-  
-  # Al final, guardamos los  resultados en un archivo CSV
+  # Al final, guardar los resultados en un archivo CSV
   results <- data.frame(Ganadas = ganadas, Perdidas = perdidas)
   write.csv(results, "results.csv", row.names = FALSE)
 }
 
 # Jugar al Blackjack
 play_blackjack()
-
-
 
 
 

@@ -1,0 +1,25 @@
+---
+title: "resultR"
+author: "Jeniffer_Funez"
+date: "2023-10-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# contenido que genera el archivo csv
+
+# ejemplo de resultados
+num_ganadas <- 5
+num_perdidas <- 3
+
+# Crear un data frame con los resultados
+results <- data.frame(Ganadas = num_ganadas, Perdidas = num_perdidas)
+
+# Guardar los resultados en un archivo CSV
+write.csv(results, "results.csv", row.names = FALSE)
+
+# Verificacion de la creacion del archivo
+list.files()
+
